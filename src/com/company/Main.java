@@ -18,11 +18,14 @@ public class Main {
         list.add(new User(2, "Maria"));
 
         System.out.println(list);
-
-        Set<User> set = new HashSet<>(list);
-
-        list = new ArrayList<>(set);
-
-        System.out.println(list);
+		
+		list = uniqueList(list);
+		
+		System.out.println(list);
     }
+	
+	private static List<User> uniqueList(List<User> userList) {
+		Set<User> set = new HashSet<>(userList);
+		return new ArrayList<>(set);
+	}
 }
